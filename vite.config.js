@@ -7,7 +7,7 @@ export default defineConfig({
     allowedHosts: 'all', // Allows external hosts like ngrok or LAN IP
     proxy: {
       '/api': {
-        target: `${process.env.REACT_APP_API_URL}`, // Your backend server
+        target: `${import.meta.env.REACT_APP_API_URL}`, // Your backend server
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/api/, ''), // Optional: strip '/api' if needed
