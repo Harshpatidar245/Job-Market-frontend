@@ -310,7 +310,7 @@ const ApplicationManagement = () => {
                       <p>
                         <strong>Resume:</strong> 
                         <a 
-                          href={`${import.meta.env.REACT_APP_API_URL}${selectedApplication.applicant.resume.path}`}
+                          href={`http://localhost:5000${selectedApplication.applicant.resume.path}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="ms-2"
