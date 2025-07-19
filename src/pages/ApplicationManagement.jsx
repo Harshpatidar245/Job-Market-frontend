@@ -310,7 +310,7 @@ const ApplicationManagement = () => {
                       <p>
                         <strong>Resume:</strong> 
                         <a 
-                          href={`${import.meta.env.BACKEND_URL}${selectedApplication.applicant.resume.path}`}
+                          href={`${import.meta.env.VITE_BACKEND_URL}${selectedApplication.applicant.resume.path}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="ms-2"

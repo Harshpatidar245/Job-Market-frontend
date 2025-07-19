@@ -68,7 +68,7 @@ const Profile = () => {
           <div className="profile-avatar">
             {profileData.profilePhoto ? (
               <img 
-                src={profileData.profilePhoto.startsWith('http') ? profileData.profilePhoto : `${import.meta.env.BACKEND_URL}${profileData.profilePhoto}`}
+                src={profileData.profilePhoto.startsWith('http') ? profileData.profilePhoto : `${import.meta.env.VITE_BACKEND_URL}${profileData.profilePhoto}`}
                 alt="Profile" 
                 className="profile-avatar-img"
               />

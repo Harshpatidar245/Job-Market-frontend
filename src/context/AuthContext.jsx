@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // Configure axios defaults
-  const API_URL = `${import.meta.env.BACKEND_URL}/api`;
+  const API_URL = `${import.meta.env.VITE_BACKEND_URL}/api`;
   axios.defaults.baseURL = API_URL;
 
   // Set auth token in axios headers

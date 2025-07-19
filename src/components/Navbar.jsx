@@ -82,7 +82,7 @@ const Navbar = () => {
                 <div className="nav-profile d-flex align-items-center gap-2">
                   {user.profilePhoto ? (
                     <img
-                      src={user.profilePhoto.startsWith('http') ? user.profilePhoto : `${import.meta.env.BACKEND_URL}${user.profilePhoto}`}
+                      src={user.profilePhoto.startsWith('http') ? user.profilePhoto : `${import.meta.env.VITE_BACKEND_URL}${user.profilePhoto}`}
                       alt="Profile"
                       className="nav-avatar"
                     />
