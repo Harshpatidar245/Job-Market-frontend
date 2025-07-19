@@ -19,7 +19,7 @@ const Login = () => {
 
   const { login } = useAuth();
   const navigate = useNavigate();
-
+  console.log("VITE_BACKEND_URL:", import.meta.env.VITE_BACKEND_URL);
   // Timer countdown for OTP resend
   useEffect(() => {
     let interval = null;
@@ -74,7 +74,7 @@ const Login = () => {
       setError("");
       setSuccess("");
 
-      const response = await axios.post(`${VITE_BACKEND_URL}/api/auth/send-email-otp`, { email });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/send-email-otp`, { email });
 
       if (response.data.success) {
         setOtpSent(true);
@@ -109,7 +109,7 @@ const Login = () => {
       setSuccess("");
 
       const formattedPhone = formatPhoneNumber(phone);
-      const response = await axios.post(`${VITE_BACKEND_URL}/auth/send-phone-otp`, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/send-phone-otp`, {
         phone: formattedPhone,
       });
 
@@ -150,7 +150,7 @@ const Login = () => {
       setLoading(true);
       setError("");
 
-      const response = await axios.post(`${VITE_BACKEND_URL}/auth/verify-email-otp`, { email, otp });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/verify-email-otp`, { email, otp });
 
       if (response.data.success) {
         const { token, user } = response.data;
@@ -194,7 +194,7 @@ const Login = () => {
       setError("");
 
       const formattedPhone = formatPhoneNumber(phone);
-      const response = await axios.post(`${VITE_BACKEND_URL}/auth/verify-phone-otp`, {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/verify-phone-otp`, {
         phone: formattedPhone,
         otp,
       });
